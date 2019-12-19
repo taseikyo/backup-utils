@@ -14,6 +14,7 @@ a batch of useful codes/scripts
 3. 003_convert_mp4_to_ts_and_merge.py: convert mp4 to ts and then merge ts to mp4
 4. 004_build_and_run_osv.py: build and run osv
 5. 005_obtain_video_play_info.py: obtain video information that exceeds the play threshold
+6. 006_auto_generate_toc.py: automatically generate a toc for markdown files
 
 ## TypeScript
 1. 001_medium_helper.ts: improve Medium.com reading experience (see [doc](TypeScript/001_medium_helper.md) for details)
