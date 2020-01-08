@@ -16,6 +16,7 @@ a batch of useful codes/scripts
 5. 005_obtain_video_play_info.py: obtain video information that exceeds the play threshold
 6. 006_auto_generate_toc.py: automatically generate a toc for markdown files
 7. 007_complete_image_path_for_paper_notes.py: complete the path to images
+8. 008_download_and_convert_b23_subtitle.py: download & convert bilibili cc subtitles to srt subtitle format
 
 ## TypeScript
 1. 001_medium_helper.ts: improve Medium.com reading experience (see [doc](TypeScript/001_medium_helper.md) for details)
