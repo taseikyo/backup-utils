@@ -7,6 +7,7 @@ a batch of useful codes/scripts
 ## Bash
 1. 001_get_process_pid_and_meminfo.sh: get pid according to process-name and print process memory info
 2. 002_print_cpu_info.sh: print cpu information (l1 - l3 cache size/type)
+3. 003_run_cmd_on_each_nodes.sh: run input command on each node (numa architecture)
 
 ## Python
 1. 001_qrc_to_lrc.py: convert qq lyric (.qrc) fromat to lrc
