@@ -19,6 +19,7 @@ a batch of useful codes/scripts
 7. 007_complete_image_path_for_paper_notes.py: complete the path to images
 8. 008_download_and_convert_b23_subtitle.py: download & convert bilibili cc subtitles to srt subtitle format
 9. 009_file_time_infos.py: get file size, access time, modification time and creation time
+10. 00A.video_resolution_duration.py: get video resolution and duration using `ffmpeg`
 
 ## TypeScript
 1. 001_medium_helper.ts: improve Medium.com reading experience (see [doc](TypeScript/001_medium_helper.md) for details)
