@@ -5,16 +5,30 @@
 # @Link    : https://github.com/taseikyo
 # @Version : Python3.7
 
-import os
 
 """
+0. convert flv to mp4
 1. convert mp4 to ts
 2. merge ts to mp4
 """
 
+import os
 
-def convert():
-    """convert mp4 to ts
+
+def flv2mp4():
+    """
+    convert flv to mp4
+    """
+
+    for x in os.listdir("."):
+        if x.endswith("flv"):
+            cmd = f"ffmpeg -i {x} -vcodec copy -acodec copy {x.split('.')[0]}.mp4"
+            os.system(cmd)
+
+
+def mp42ts():
+    """
+    convert mp4 to ts
     """
     for x in os.listdir("."):
         if x.endswith("mp4"):
@@ -23,7 +37,8 @@ def convert():
 
 
 def merge():
-    """merge ts as mp4
+    """
+    merge ts as mp4
     """
     files = []
     for x in os.listdir("."):
@@ -36,5 +51,6 @@ def merge():
 
 
 if __name__ == "__main__":
-    convert()
+    flv2mp4()
+    mp42ts()
     merge()
