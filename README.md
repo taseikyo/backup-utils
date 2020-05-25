@@ -11,7 +11,7 @@ a batch of useful codes/scripts
 4. 004_kill_process_via_name.sh: kill the process you input the name
 
 ## Python
-1. 001_qrc_to_lrc.py: convert qq lyric (.qrc) fromat to lrc
+1. ~001_qrc_to_lrc.py: convert qq lyric (.qrc) fromat to lrc~
 2. 002_clear_netease_cloud_music_cache.py: clear netease-cloud-music cache
 3. 003_convert_mp4_to_ts_and_merge.py: convert flv to mp4, convert mp4 to ts and then merge ts to mp4
 4. 004_build_and_run_osv.py: build and run osv
