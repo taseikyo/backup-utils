@@ -22,6 +22,8 @@ a batch of useful codes/scripts
 9. 009_file_time_infos.py: get file size, access time, modification time and creation time
 10. 00A.video_resolution_duration.py: get video resolution and duration using `ffmpeg`
 11. 00B.download_iqiyi_danmu_and_convert_b23_format.py: search and obtain iQiyi's danmu, and convert to Bilibili format
+12. 00C.blogs_subscribe.py: pull subscribed blogs to local
+13. 00D.sublime-markdown-helper.py: A Sublime Text 3 plugin that can help write markdown faster (see .md doc for details)
 
 ## TypeScript
 1. 001_medium_helper.ts: improve Medium.com reading experience (see [doc](TypeScript/001_medium_helper.md) for details)
