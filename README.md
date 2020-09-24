@@ -24,6 +24,7 @@ a batch of useful codes/scripts
 11. 00B.download_iqiyi_danmu_and_convert_b23_format.py: search and obtain iQiyi's danmu, and convert to Bilibili format
 12. 00C.blogs_subscribe.py: pull subscribed blogs to local
 13. 00D.sublime-markdown-helper.py: A Sublime Text 3 plugin that can help write markdown faster (see .md doc for details)
+14. 00E.remove_duplicate_history_cmds.py: Remove duplicate commands in .zsh_history/.bash_history
 
 ## TypeScript
 1. 001_medium_helper.ts: improve Medium.com reading experience (see [doc](TypeScript/001_medium_helper.md) for details)
