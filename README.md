@@ -25,6 +25,7 @@ a batch of useful codes/scripts
 12. 00C.blogs_subscribe.py: pull subscribed blogs to local
 13. 00D.sublime-markdown-helper.py: A Sublime Text 3 plugin that can help write markdown faster (see .md doc for details)
 14. 00E.remove_duplicate_history_cmds.py: Remove duplicate commands in .zsh_history/.bash_history
+15. 00F.pdf_cutter_tools.py: cutting pdf!
 
 ## TypeScript
 1. 001_medium_helper.ts: improve Medium.com reading experience (see [doc](TypeScript/001_medium_helper.md) for details)
