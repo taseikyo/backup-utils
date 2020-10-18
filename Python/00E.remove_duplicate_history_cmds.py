@@ -23,6 +23,7 @@ from datetime import datetime
 
 BASH_HISTORY_PATH = "/home/tian/.bash_history"
 ZSH_HISTORY_PATH = "/home/tian/.zsh_history"
+CMDER_HISTORY_PATH = "D:/Programs/cmder/config/.history"
 # 定义一个时间阈值 避免每次切换/登录都要跑一遍
 THRESHOLD_SECONDS = 3600
 
@@ -36,28 +37,28 @@ def cal_time(stamp):
     return (t1 - t2).seconds
 
 
-def bash_history():
+def cmd_history(path):
     """
-    我之前记得 bash 是不记录重复命令的啊
-    难道我记忆错乱了？
+    清理 cmder/bash 类似的历史记录
+    这类历史记录仅仅记录命令而不记录多余的信息
     """
     table = set()
     cmds = []
     cnt = 0
     # 如果修改时间小于时间阈值则不管
-    if cal_time(os.path.getmtime(BASH_HISTORY_PATH)) < THRESHOLD_SECONDS:
+    if cal_time(os.path.getmtime(path)) < THRESHOLD_SECONDS:
         return
 
-    with open(BASH_HISTORY_PATH, encoding="utf-8") as f:
+    with open(path, encoding="utf-8") as f:
         for cmd in f:
             cnt += 1
             if cmd in table:
                 continue
             table.add(cmd)
             cmds.append(cmd)
-    # print("".join(cmds))
-    print(f"{BASH_HISTORY_PATH} {cnt} -> {len(cmds)}")
-    with open(BASH_HISTORY_PATH, "w", encoding="utf-8") as f:
+
+    print(f"{path} {cnt} -> {len(cmds)}")
+    with open(path, "w", encoding="utf-8") as f:
         f.write("".join(cmds))
 
 
@@ -80,20 +81,16 @@ def zsh_history():
                 continue
             table.add(purge_cmd)
             cmds.append(cmd)
-    # print("".join(cmds))
+
     print(f"{ZSH_HISTORY_PATH} {cnt} -> {len(cmds)}")
     with open(ZSH_HISTORY_PATH, "w", encoding="utf-8") as f:
         f.write("".join(cmds))
 
 
-def main():
-    """
-    如果想加其他的 xsh 也可以
-    直接参考上面的写法
-    """
-    bash_history()
-    zsh_history()
-
-
 if __name__ == "__main__":
-    main()
+    if os.path.exists(BASH_HISTORY_PATH):
+        cmd_history(BASH_HISTORY_PATH)
+    if os.path.exists(ZSH_HISTORY_PATH):
+        zsh_history()
+    if os.path.exists(CMDER_HISTORY_PATH):
+        cmd_history(CMDER_HISTORY_PATH)
