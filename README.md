@@ -5,12 +5,14 @@ a batch of useful codes/scripts
 *Afraid of accidental code loss, so I make this backup.*
 
 ## Bash
+
 1. 001_get_process_pid_and_meminfo.sh: get pid according to process-name and print process memory info
 2. 002_print_cpu_info.sh: print cpu information (l1 - l3 cache size/type)
 3. 003_run_cmd_on_each_nodes.sh: run input command on each node (numa architecture)
 4. 004_kill_process_via_name.sh: kill the process you input the name
 
 ## Python
+
 1. ~001_qrc_to_lrc.py: convert qq lyric (.qrc) fromat to lrc~
 2. 002_clear_netease_cloud_music_cache.py: clear netease-cloud-music cache
 3. 003_convert_mp4_to_ts_and_merge.py: convert flv to mp4, convert mp4 to ts and then merge ts to mp4
@@ -26,8 +28,10 @@ a batch of useful codes/scripts
 13. 00D.sublime-markdown-helper.py: A Sublime Text 3 plugin that can help write markdown faster (see .md doc for details)
 14. 00E.remove_duplicate_history_cmds.py: Remove duplicate commands in .zsh_history/.bash_history
 15. 00F.pdf_cutter_tools.py: cutting pdf!
+16. 010.extract_images_from_qq_group_messages.py: Extract images from QQ group messages
 
 ## TypeScript
+
 1. 001_medium_helper.ts: improve Medium.com reading experience (see [doc](TypeScript/001_medium_helper.md) for details)
 
 ## License
