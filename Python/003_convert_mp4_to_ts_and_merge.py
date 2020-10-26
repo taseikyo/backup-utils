@@ -15,38 +15,36 @@
 import os
 
 
-def flv2mp4():
+def flv2mp4(path: str = ".") -> None:
     """
     convert flv to mp4
     """
+    files = [f for f in os.listdir(path) if f.endswith("flv")]
+    for file in files:
+        ofile = os.path.splitext(file)[0]
+        cmd = f"ffmpeg -i {path}/{file} -vcodec copy -acodec copy {path}/{ofile}.mp4"
+        os.system(cmd)
 
-    for x in os.listdir("."):
-        if x.endswith("flv"):
-            cmd = f"ffmpeg -i {x} -vcodec copy -acodec copy {x.split('.')[0]}.mp4"
-            os.system(cmd)
 
-
-def mp42ts():
+def mp42ts(path: str = ".") -> None:
     """
     convert mp4 to ts
     """
-    for x in os.listdir("."):
-        if x.endswith("mp4"):
-            cmd = f"ffmpeg -i {x} -vcodec copy -acodec copy -vbsf h264_mp4toannexb {x.split('.')[0]}.ts"
-            os.system(cmd)
+    files = [f for f in os.listdir(path) if f.endswith("mp4")]
+    for file in files:
+        ofile = os.path.splitext(file)[0]
+        cmd = f"ffmpeg -i {path}/{file} -vcodec copy -acodec copy -vbsf h264_mp4toannexb {path}/{ofile}.ts"
+        os.system(cmd)
 
 
-def merge():
+def merge(path: str = ".") -> None:
     """
     merge ts as mp4
     """
-    files = []
-    for x in os.listdir("."):
-        if x.endswith("ts"):
-            files.append(x)
+    files = [f"{path}/{f}" for f in os.listdir(path) if f.endswith("ts")]
     if not files:
         return
-    cmd = f"""ffmpeg -i "concat:{'|'.join(files)}" -acodec copy -vcodec copy -absf aac_adtstoasc output.mp4"""
+    cmd = f"""ffmpeg -i "concat:{'|'.join(files)}" -acodec copy -vcodec copy -absf aac_adtstoasc {path}/output.mp4"""
     os.system(cmd)
 
 
