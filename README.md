@@ -11,6 +11,10 @@ a batch of useful codes/scripts
 3. 003_run_cmd_on_each_nodes.sh: run input command on each node (numa architecture)
 4. 004_kill_process_via_name.sh: kill the process you input the name
 
+## JavaScript
+
+1. 001_web-font-style-beautification.js: Set the web font to Microsoft Yahei (used in [tampermonkey](https://www.tampermonkey.net/))
+
 ## Python
 
 1. ~001_qrc_to_lrc.py: convert qq lyric (.qrc) fromat to lrc~
