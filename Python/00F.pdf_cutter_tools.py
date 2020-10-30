@@ -6,13 +6,13 @@
 # @Version : python3.8
 
 """
-cutting pdf!
+cut or merge pdfs!
 
 ref：https://blog.csdn.net/Qin1999/article/details/90707609
 """
 
 import os
-from PyPDF2 import PdfFileReader, PdfFileWriter
+from PyPDF2 import PdfFileReader, PdfFileWriter, PdfFileMerger
 
 
 def mkdir(folder):
@@ -36,6 +36,8 @@ def cut_in_fixed_size(path: str, page_size: int = 10):
     assert os.path.exists(path) and page_size > 0
 
     file_folder, filename = os.path.split(path)
+    if not file_folder:
+        file_folder = "."
     # the output folder to save the cuting pdfs
     output_folder = f"{file_folder}/{os.path.splitext(filename)[0]}"
     output_folder = mkdir(output_folder)
@@ -77,6 +79,8 @@ def cut_in_range(path: str, page_start: int, page_end: int):
     assert os.path.exists(path) and page_end > page_start > 0
 
     file_folder, filename = os.path.split(path)
+    if not file_folder:
+        file_folder = "."
     # the output folder to save the cuting pdfs
     output_folder = f"{file_folder}/{os.path.splitext(filename)[0]}"
     output_folder = mkdir(output_folder)
@@ -97,6 +101,26 @@ def cut_in_range(path: str, page_start: int, page_end: int):
                 output.write(pdf)
             break
     print(f"{output_folder}/{output_filename} has been saved!")
+
+
+def merge_pdfs(path: str = ".", excluding: list = []):
+    """
+    merge all pdfs in the @path folder, except the pdfs in @except
+    """
+    assert os.path.exists(path) and os.path.isdir(path)
+    files = [f for f in os.listdir(path) if f.endswith("pdf") and f not in excluding]
+
+    file_folder = os.path.split(path)[0]
+    if not file_folder:
+        file_folder = "."
+    merger = PdfFileMerger()
+    for file in files:
+        with open(file, "rb") as pdf:
+            merger.append(PdfFileReader(pdf))
+
+    with open(f"{file_folder}/merge_pdfs.pdf", "wb") as out:
+        merger.write(out)
+    print(f"{file_folder}/merge_pdfs.pdf has been saved!")
 
 
 if __name__ == "__main__":
