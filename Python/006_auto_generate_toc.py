@@ -41,7 +41,8 @@ ILLEGAL_CHARS = [
 ]
 
 
-def auto_generate_toc(filename):
+def auto_generate_toc(filename: str = "") -> None:
+    assert os.path.exists(filename)
     print(f"generate toc for {filename}")
     with open(filename, encoding="utf-8") as f:
         lines = f.readlines()

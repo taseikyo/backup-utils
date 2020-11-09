@@ -32,7 +32,7 @@ HEADERS = {
 XML_INTERVAL = 5
 
 
-def search(kw):
+def search(kw: str) -> dict:
     """
     返回搜索结果和对应的 albumid
     """
@@ -50,7 +50,7 @@ def search(kw):
     return ret
 
 
-def obtain_tvid(albumid):
+def obtain_tvid(albumid: str) -> list:
     """
     返回 albumid 对应的所有 {tvid: duration}
     """
@@ -75,7 +75,7 @@ def obtain_tvid(albumid):
     return ret
 
 
-def obtain_bullet(tvid_info):
+def obtain_bullet(tvid_info: dict) -> None:
     """
     弹幕链接为 https://cmts.iqiyi.com/bullet/视频编号的倒数4、3位/视频编号的倒数2、1位/视频编号_300_序号.z
     弹幕文件每5分钟（300秒）向服务器请求一次，故每集弹幕文件数量等于视频时间除以300之后向上取整
