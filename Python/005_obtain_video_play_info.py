@@ -18,9 +18,10 @@ import pandas as pd
 PLAY_THRESHOLD = 500
 
 
-def obtain_video_play_info(mid, page=1):
-    """obtain upper's (@mid) video information
-    that exceeds the `PLAY_THRESHOLD`
+def obtain_video_play_info(mid: str, page: int = 1) -> None:
+    """
+    obtain upper's ($mid) video information
+    that exceeds the $PLAY_THRESHOLD
     """
     url = "https://api.bilibili.com/x/space/arc/search"
     payloads = {
@@ -61,8 +62,9 @@ def obtain_video_play_info(mid, page=1):
     obtain_video_play_info(mid, page + 1)
 
 
-def dump(mid, data, page):
-    """save @data as csv named @mid_@page.csv
+def dump(mid: str, data: list, page: int) -> None:
+    """
+    save $data as csv named $mid_$page.csv
     """
     print(f"begin to dump @{mid}'data page {page}...")
     with open(f"{mid}_{page}.csv", "w", encoding="utf-8", newline="") as csvfile:
@@ -79,8 +81,9 @@ def dump(mid, data, page):
         writer.writerows(data)
 
 
-def merge(mid):
-    """merge all @mid_@page.csv to @mid.csv
+def merge(mid: str) -> None:
+    """
+    merge all $mid_*.csv to $mid.csv
     """
     merge_list = []
     files = os.listdir()

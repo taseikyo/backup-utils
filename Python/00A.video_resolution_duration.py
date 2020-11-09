@@ -19,7 +19,7 @@ import subprocess
 import json
 
 
-def get_resolution(filename):
+def get_resolution(filename: str) -> str:
     """
     returns the resolution as widthxheight
     """
@@ -52,7 +52,7 @@ def get_resolution(filename):
     return f"{width}x{height}"
 
 
-def get_duration(filename):
+def get_duration(filename: str) -> str:
     """
     returns video duration in seconds
     """

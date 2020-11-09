@@ -14,10 +14,11 @@ import re
 import requests
 
 
-def obtain_cc_subtitle(avid="77948393"):
-    """obtain cc subtitles
+def obtain_cc_subtitle(avid: str = "77948393") -> None:
+    """
+    obtain cc subtitles
 
-    @avid: id of the video
+    $avid: id of the video
     """
     url = f"https://www.bilibili.com/video/av{avid}"
     headers = {
@@ -36,10 +37,11 @@ def obtain_cc_subtitle(avid="77948393"):
         convert_to_srt(url.split("/")[-1].split(".")[0], r.json()["body"])
 
 
-def convert_to_srt(srt_id, subtitles):
-    """convert cc subtitles to srt subtitles
+def convert_to_srt(srt_id: str, subtitles: list) -> None:
+    """
+    convert cc subtitles to srt subtitles
 
-    @subtitles: a json foramt cc subtitles
+    $subtitles: a json foramt cc subtitles
     """
     srt = []
     for index, subtitle in enumerate(subtitles):
