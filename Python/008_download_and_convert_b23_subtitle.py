@@ -12,6 +12,7 @@ to srt subtitle format
 
 import re
 import requests
+import datetime
 
 
 def obtain_cc_subtitle(avid: str = "77948393") -> None:
@@ -45,12 +46,32 @@ def convert_to_srt(srt_id: str, subtitles: list) -> None:
     """
     srt = []
     for index, subtitle in enumerate(subtitles):
-        srt_tmp = f"""{index}\n{subtitle["from"]} --> {subtitle["to"]}\n{subtitle["content"]}\n"""
+        from_timestamp = convert_timestamp_format(subtitle["from"])
+        to_timestamp = convert_timestamp_format(subtitle["to"])
+        srt_tmp = f"""{index}\n{from_timestamp} --> {to_timestamp}\n{subtitle["content"]}\n"""
         srt.append(srt_tmp)
 
     with open(f"{srt_id}.srt", "w", encoding="utf-8") as f:
         f.write("\n".join(srt))
 
+
+def convert_timestamp_format(cc_timestamp: float) -> str:
+    """
+    convert cc timestamp format to srt subtitles timestamp format
+
+    $cc_timestamp: a seconds format cc timestamp
+    """
+    cc_timestamp = str(cc_timestamp)
+    s = 0
+    mm = 0
+    if "." in cc_timestamp:
+        s = int(cc_timestamp.split(".")[0])
+        mm = int(cc_timestamp.split(".")[1])
+    else:
+        s = int(cc_timestamp)
+    m, s = divmod(s, 60)
+    h, m = divmod(m, 60)
+    return f'{h:02d}:{m:02d}:{s:02d},{mm:03d}'
 
 if __name__ == "__main__":
     obtain_cc_subtitle("60977932")
