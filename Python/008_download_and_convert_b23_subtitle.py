@@ -12,7 +12,6 @@ to srt subtitle format
 
 import re
 import requests
-import datetime
 
 
 def obtain_cc_subtitle(vid: str = "") -> None:
