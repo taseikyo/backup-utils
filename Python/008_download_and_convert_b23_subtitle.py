@@ -62,14 +62,9 @@ def convert_timestamp_format(cc_timestamp: float) -> str:
 
     $cc_timestamp: a seconds format cc timestamp
     """
-    cc_timestamp = str(cc_timestamp)
-    s = 0
-    mm = 0
-    if "." in cc_timestamp:
-        s = int(cc_timestamp.split(".")[0])
-        mm = int(cc_timestamp.split(".")[1])
-    else:
-        s = int(cc_timestamp)
+    s, mm = int(cc_timestamp), 0
+    if "." in str(cc_timestamp):
+        s, mm = map(int, str(cc_timestamp).split("."))
     m, s = divmod(s, 60)
     h, m = divmod(m, 60)
     return f"{h:02d}:{m:02d}:{s:02d},{mm:03d}"
