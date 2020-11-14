@@ -48,7 +48,9 @@ def convert_to_srt(srt_id: str, subtitles: list) -> None:
     for index, subtitle in enumerate(subtitles):
         from_timestamp = convert_timestamp_format(subtitle["from"])
         to_timestamp = convert_timestamp_format(subtitle["to"])
-        srt_tmp = f"""{index}\n{from_timestamp} --> {to_timestamp}\n{subtitle["content"]}\n"""
+        srt_tmp = (
+            f"""{index}\n{from_timestamp} --> {to_timestamp}\n{subtitle["content"]}\n"""
+        )
         srt.append(srt_tmp)
 
     with open(f"{srt_id}.srt", "w", encoding="utf-8") as f:
@@ -71,7 +73,8 @@ def convert_timestamp_format(cc_timestamp: float) -> str:
         s = int(cc_timestamp)
     m, s = divmod(s, 60)
     h, m = divmod(m, 60)
-    return f'{h:02d}:{m:02d}:{s:02d},{mm:03d}'
+    return f"{h:02d}:{m:02d}:{s:02d},{mm:03d}"
+
 
 if __name__ == "__main__":
     obtain_cc_subtitle("av60977932")
