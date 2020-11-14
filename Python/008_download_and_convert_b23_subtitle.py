@@ -14,13 +14,13 @@ import re
 import requests
 
 
-def obtain_cc_subtitle(avid: str = "77948393") -> None:
+def obtain_cc_subtitle(vid: str = "") -> None:
     """
     obtain cc subtitles
 
-    $avid: id of the video
+    $vid: id of the video
     """
-    url = f"https://www.bilibili.com/video/av{avid}"
+    url = f"https://www.bilibili.com/video/{vid}"
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 "
         "(KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36",
@@ -45,12 +45,30 @@ def convert_to_srt(srt_id: str, subtitles: list) -> None:
     """
     srt = []
     for index, subtitle in enumerate(subtitles):
-        srt_tmp = f"""{index}\n{subtitle["from"]} --> {subtitle["to"]}\n{subtitle["content"]}\n"""
+        from_timestamp = convert_timestamp_format(subtitle["from"])
+        to_timestamp = convert_timestamp_format(subtitle["to"])
+        srt_tmp = (
+            f"""{index}\n{from_timestamp} --> {to_timestamp}\n{subtitle["content"]}\n"""
+        )
         srt.append(srt_tmp)
 
     with open(f"{srt_id}.srt", "w", encoding="utf-8") as f:
         f.write("\n".join(srt))
 
 
+def convert_timestamp_format(cc_timestamp: float) -> str:
+    """
+    convert cc timestamp format to srt subtitles timestamp format
+
+    $cc_timestamp: a seconds format cc timestamp
+    """
+    s, mm = int(cc_timestamp), 0
+    if "." in str(cc_timestamp):
+        s, mm = map(int, str(cc_timestamp).split("."))
+    m, s = divmod(s, 60)
+    h, m = divmod(m, 60)
+    return f"{h:02d}:{m:02d}:{s:02d},{mm:03d}"
+
+
 if __name__ == "__main__":
-    obtain_cc_subtitle("60977932")
+    obtain_cc_subtitle("av60977932")
