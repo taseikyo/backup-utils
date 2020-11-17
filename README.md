@@ -1,4 +1,4 @@
-# My Backup Utilities
+![My Backup Utilities](https://socialify.git.ci/taseikyo/backup-utils/image?forks=1&issues=1&language=1&owner=1&pattern=Brick%20Wall&pulls=1&stargazers=1&theme=Light "My Backup Utilities: a batch of useful code/scripts: run commands automatically, finish repetitive stupid operations, perform format conversions, etc.")
 
 a batch of useful codes/scripts
 
@@ -26,13 +26,13 @@ a batch of useful codes/scripts
 7. 007_complete_image_path_for_paper_notes.py: complete the path to images
 8. 008_download_and_convert_b23_subtitle.py: download & convert bilibili cc subtitles to srt subtitle format
 9. 009_file_time_infos.py: get file size, access time, modification time and creation time
-10. 00A.video_resolution_duration.py: get video resolution and duration using `ffmpeg`
-11. 00B.download_iqiyi_danmu_and_convert_b23_format.py: search and obtain iQiyi's danmu, and convert to Bilibili format
-12. 00C.blogs_subscribe.py: pull subscribed blogs to local
-13. 00D.sublime-markdown-helper.py: A Sublime Text 3 plugin that can help write markdown faster (see .md doc for details)
-14. 00E.remove_duplicate_history_cmds.py: Remove duplicate commands in .zsh_history/.bash_history
-15. 00F.pdf_cutter_tools.py: cut or merge pdfs!
-16. 010.extract_images_from_qq_group_messages.py: Extract images from QQ group messages
+10. 00A_video_resolution_duration.py: get video resolution and duration using `ffmpeg`
+11. 00B_download_iqiyi_danmu_and_convert_b23_format.py: search and obtain iQiyi's danmu, and convert to Bilibili format
+12. 00C_blogs_subscribe.py: pull subscribed blogs to local
+13. 00D_sublime-markdown-helper.py: A Sublime Text 3 plugin that can help write markdown faster (see .md doc for details)
+14. 00E_remove_duplicate_history_cmds.py: Remove duplicate commands in .zsh_history/.bash_history
+15. 00F_pdf_cutter_tools.py: cut or merge pdfs!
+16. 010_extract_images_from_qq_group_messages.py: Extract images from QQ group messages
 
 ## TypeScript
 
