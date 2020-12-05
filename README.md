@@ -33,6 +33,7 @@ a batch of useful codes/scripts
 14. 00E_remove_duplicate_history_cmds.py: Remove duplicate commands in .zsh_history/.bash_history
 15. 00F_pdf_cutter_tools.py: cut or merge pdfs!
 16. 010_extract_images_from_qq_group_messages.py: Extract images from QQ group messages
+1. 011_download_netease_music_lyric.py: Download lyrics from https://music.163.com
 
 ## TypeScript
 
