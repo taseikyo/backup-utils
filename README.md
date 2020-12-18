@@ -29,7 +29,7 @@ a batch of useful codes/scripts
 10. 00A_video_resolution_duration.py: get video resolution and duration using `ffmpeg`
 11. 00B_download_iqiyi_danmu_and_convert_b23_format.py: search and obtain iQiyi's danmu, and convert to Bilibili format
 12. 00C_blogs_subscribe.py: pull subscribed blogs to local
-13. 00D_sublime-markdown-helper.py: A Sublime Text 3 plugin that can help write markdown faster (see .md doc for details)
+13. ~00D_sublime-markdown-helper.py: A Sublime Text 3 plugin that can help write markdown faster (see .md doc for details)~，move to [sublime-markdown-helper](https://github.com/taseikyo/sublime-markdown-helper)
 14. 00E_remove_duplicate_history_cmds.py: Remove duplicate commands in .zsh_history/.bash_history
 15. 00F_pdf_cutter_tools.py: cut or merge pdfs!
 16. 010_extract_images_from_qq_group_messages.py: Extract images from QQ group messages
