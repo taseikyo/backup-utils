@@ -34,6 +34,7 @@ a batch of useful codes/scripts
 15. 00F_pdf_cutter_tools.py: cut or merge pdfs!
 16. 010_extract_images_from_qq_group_messages.py: Extract images from QQ group messages
 1. 011_download_netease_music_lyric.py: Download lyrics from https://music.163.com
+1. 012_zhihu_zhuanlan.py: Save the Zhihu column article as Markdown
 
 ## TypeScript
 
