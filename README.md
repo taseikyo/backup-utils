@@ -11,6 +11,7 @@ a batch of useful codes/scripts
 3. 003_run_cmd_on_each_nodes.sh: run input command on each node (numa architecture)
 4. 004_kill_process_via_name.sh: kill the process you input the name
 1. 005_convert_pdf_to_eps.sh: Convert PDF to eps (encapsulated PostScript)
+1. 006_format_python.sh: Format python scripts with tools such as `black`
 
 ## JavaScript
 
